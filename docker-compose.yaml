@@ -1,0 +1,13 @@
+services:
+  force-trading-bot:
+    build: .
+    container_name: force-trading-bot
+    volumes:
+      - .:/app # Should change sometimes to prevent accidental breaks, change to only mount listings.json
+    environment:
+
+      - PYTHONBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - DISCORD_TOKEN=${BOT_TOKEN}
+
+    command: python3 main.py

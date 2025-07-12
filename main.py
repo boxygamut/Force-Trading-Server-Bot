@@ -16,6 +16,7 @@ async def on_ready():
     
     
 @client.command()
+@commands.is_owner()
 async def sync(ctx):
     
     print("Attempting to sync commands...")

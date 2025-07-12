@@ -131,7 +131,7 @@ class Trading(commands.Cog):
         
         embed = discord.Embed(title="Trade Listings", description = embed_text, color=discord.Color.blue())
 
-        if len(embed.description) == 11:
+        if len(embed.description) == 3:
             await interaction.response.send_message("No listings found for this item.", ephemeral=True)
             return
                 

@@ -134,7 +134,7 @@ class Trading(commands.Cog):
         if len(embed.description) == 3:
             await interaction.response.send_message("No listings found for this item.", ephemeral=True)
             return
-                
+
         await interaction.response.send_message(embed=embed, ephemeral=False)
         
         
@@ -196,16 +196,25 @@ class Trading(commands.Cog):
             await interaction.response.send_message(f"{user.mention} has no listings.", ephemeral=True)
             return
         
-        embed = discord.Embed(title=f"{user.name}'s Trade Listings", color=discord.Color.purple())
+        embed_text = "```ansi\n"
+        
+        
         
         for listing_id, listing in listings["listings"][user_id_str]["listings"].items():
-            embed.add_field(
-                name=f"Listing ID: {listing_id}",
-                value=f"**Listed Item:** {listing['item_display_name']} **({listing['listing_quantity']}x)**\n"
-                    f"**Wanted Item:** {listing['wanted_item_display_name']} **({listing['wanted_quantity']}x)**",
-                inline=False
-            )
-            
+            embed_text += f"\u001b[0;33m[#{listing_id}] \u001b[37m{listing['item_display_name']} \u001b[2;34m({listing['listing_quantity']}x)\u001b[37m\n"
+            embed_text += f"\u001b[2;34mWanted Item\u001b[37m: {listing['wanted_item_display_name']} \u001b[2;34m({listing['wanted_quantity']}x)\n"
+            embed_text += f"\u001b[2;34mUsername\u001b[37m: {listing['username']}\n"
+            embed_text += f"\u001b[37m▬▬▬▬▬▬▬▬\n"
+
+        embed_text = embed_text[:-14]
+        embed_text += "```"
+        
+        embed = discord.Embed(title=f"{user.name}'s Trade Listings", description = embed_text, color=discord.Color.purple())
+        
+        if len(embed_text) == 3:
+            await interaction.response.send_message(f"{user.mention} has no listings.", ephemeral=True)
+            return
+
         await interaction.response.send_message(embed=embed, ephemeral=False)
         
     

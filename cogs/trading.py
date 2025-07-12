@@ -51,7 +51,7 @@ class Trading(commands.Cog):
         ]
         return filtered[:25]
 
-    @app_commands.command(name = "create_listing", description = "Create a new trade listing")
+    @app_commands.command(name = "inventory_add", description = "Create a new trade listing")
     @app_commands.autocomplete(listing_item = listing_item_autocomplete)
     @app_commands.autocomplete(wanted_item = listing_item_autocomplete)
     async def create_listing(self, interaction: discord.Interaction, listing_item: str, listing_quantity: int, wanted_item: str, wanted_quantity: int = 1):
@@ -138,7 +138,7 @@ class Trading(commands.Cog):
         await interaction.response.send_message(embed=embed, ephemeral=False)
         
         
-    @app_commands.command(name = "delete_listing", description = "Delete a trade listing")
+    @app_commands.command(name = "inventory_delete", description = "Delete a trade listing")
     @app_commands.autocomplete(listing_id=listings_autocomplete)
     async def delete_listing(self, interaction: discord.Interaction, listing_id: str):
         with open("data/listings.json", "r") as f:
@@ -158,7 +158,7 @@ class Trading(commands.Cog):
             
         await interaction.response.send_message(f"Listing `{listing_id}` deleted successfully!", ephemeral=True)
         
-    @app_commands.command(name = "view_my_listings", description = "View your trade listings")
+    @app_commands.command(name = "inventory_view", description = "View your trade listings")
     async def view_my_listings(self, interaction: discord.Interaction):
         with open("data/listings.json", "r") as f:
             listings = json.load(f)
@@ -185,7 +185,7 @@ class Trading(commands.Cog):
 
         await interaction.response.send_message(embed=embed, ephemeral=False)
         
-    @app_commands.command(name = "view_player_listings", description = "View a player's trade listings")
+    @app_commands.command(name = "inventory_view_player", description = "View a player's trade listings")
     async def view_player_listings(self, interaction: discord.Interaction, user: discord.Member):
         with open("data/listings.json", "r") as f:
             listings = json.load(f)
@@ -218,7 +218,7 @@ class Trading(commands.Cog):
         await interaction.response.send_message(embed=embed, ephemeral=False)
         
     
-    @app_commands.command(name = "delete_all_listings", description = "Delete all your trade listings")
+    @app_commands.command(name = "inventory_clear", description = "Delete all your trade listings")
     async def delete_all_listings(self, interaction: discord.Interaction):
         with open("data/listings.json", "r") as f:
             listings = json.load(f)

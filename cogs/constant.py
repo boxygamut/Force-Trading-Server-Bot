@@ -7,6 +7,8 @@ constants = {
             app_commands.Choice(name="Beskar Bar", value="beskar_bar"),
             app_commands.Choice(name="Forge Schematic", value="forge_schematic"),
             app_commands.Choice(name="Brylack Log", value="brylack_log"),
+            app_commands.Choice(name="None", value="None"),
+            app_commands.Choice(name="Looking for Offers", value="looking_for_offers"),
             
             # Obi-wan Set
             app_commands.Choice(name="Obi-wan Set", value="obi_wan_set"),

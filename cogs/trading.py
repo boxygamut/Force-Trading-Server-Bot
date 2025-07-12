@@ -42,11 +42,19 @@ class Trading(commands.Cog):
             app_commands.Choice(name=choice, value=choice)
             for choice in choices if current.lower() in choice.lower()
         ][:25]
+        
+    async def listing_item_autocomplete(self, interaction: discord.Interaction, current: str)  -> List[app_commands.Choice]:
+        all_items = constants["item_choices"]
+        filtered = [
+            choice for choice in all_items
+            if current.lower() in choice.name.lower()
+        ]
+        return filtered[:25]
 
     @app_commands.command(name = "create_listing", description = "Create a new trade listing")
-    @app_commands.choices(listing_item = constants["item_choices"])
-    @app_commands.choices(wanted_item = constants["item_choices"])
-    async def create_listing(self, interaction: discord.Interaction, listing_item: app_commands.Choice[str], listing_quantity: int, wanted_item: app_commands.Choice[str], wanted_quantity: int = 1):
+    @app_commands.autocomplete(listing_item = listing_item_autocomplete)
+    @app_commands.autocomplete(wanted_item = listing_item_autocomplete)
+    async def create_listing(self, interaction: discord.Interaction, listing_item: str, listing_quantity: int, wanted_item: str, wanted_quantity: int = 1):
 
         with open("data/listings.json", "r") as f:
             listings = json.load(f)
@@ -55,15 +63,19 @@ class Trading(commands.Cog):
 
         new_listing = {
             "listing_id": f"{await self.generate_listing_id(listings['listing_ids'])}",
-            "item": listing_item.value,
+            "item": listing_item,
             "user_id": interaction.user.id,
             "username": interaction.user.name,
             "listing_quantity": listing_quantity,
-            "wanted_item": wanted_item.value,
+            "wanted_item": wanted_item,
             "wanted_quantity": wanted_quantity,
-            "item_display_name": listing_item.name,
-            "wanted_item_display_name": wanted_item.name
+            "item_display_name": next((choice.name for choice in constants["item_choices"] if choice.value == listing_item), "Unknown Item"),
+            "wanted_item_display_name": next((choice.name for choice in constants["item_choices"] if choice.value == wanted_item), "Unknown Item")
         }
+        
+        if new_listing["item_display_name"] == "Unknown Item" or new_listing["wanted_item_display_name"] == "Unknown Item":
+            await interaction.response.send_message("Invalid item or wanted item specified.", ephemeral=True)
+            return
         
             
         with open("data/listings.json", "w") as f:
@@ -92,8 +104,8 @@ class Trading(commands.Cog):
         await interaction.response.send_message("Listing created successfully!", ephemeral=True)
 
     @app_commands.command(name = "search_item", description = "View listings of an item")
-    @app_commands.choices(listing_item = constants["item_choices"]) # NEED TO MAKE PAGINATOR
-    async def search_item(self, interaction: discord.Interaction, listing_item: app_commands.Choice[str]):
+    @app_commands.autocomplete(listing_item = listing_item_autocomplete)
+    async def search_item(self, interaction: discord.Interaction, listing_item: str):
         with open("data/listings.json", "r") as f:
             listings = json.load(f)
             
@@ -107,14 +119,8 @@ class Trading(commands.Cog):
 
         for i, (user_id, user_listings) in enumerate(listings["listings"].items()):
             for index, (listing_id, listing) in enumerate(user_listings["listings"].items()):
-                if listing["item"] == listing_item.value:
-                    # embed.add_field(
-                    #     name=f"Listing ID: {listing_id}",
-                    #     value=f"**Listed Item:** {listing['item_display_name']} **({listing['listing_quantity']}x)**\n"
-                    #         f"**Wanted Item:** {listing['wanted_item_display_name']} **({listing['wanted_quantity']}x)**\n"
-                    #         f"**User:** {listing['username']}",
-                    #     inline=False
-                    # )
+                if listing["item"] == listing_item:
+
                     embed_text += f"\u001b[0;33m[#{listing_id}] \u001b[37m{listing['item_display_name']} \u001b[2;34m({listing['listing_quantity']}x)\u001b[37m\n"
                     embed_text += f"\u001b[2;34mWanted Item\u001b[37m: {listing['wanted_item_display_name']} \u001b[2;34m({listing['wanted_quantity']}x)\n"
                     embed_text += f"\u001b[2;34mUsername\u001b[37m: {listing['username']}\n"
@@ -160,7 +166,7 @@ class Trading(commands.Cog):
         user_id_str = str(interaction.user.id)
         
         if user_id_str not in listings["listings"].keys() or not listings["listings"][user_id_str]["listings"]:
-            await interaction.response.send_message("You have no listings.", ephemeral=False)
+            await interaction.response.send_message("You have no listings.", ephemeral=True)
             return
         
         
@@ -175,7 +181,7 @@ class Trading(commands.Cog):
         embed_text = embed_text[:-14]
         embed_text += "```"
         
-        embed = discord.Embed(title="Your Trade Listings", description= embed_text[:-14], color=discord.Color.green())
+        embed = discord.Embed(title="Your Trade Listings", description= embed_text, color=discord.Color.green())
 
         await interaction.response.send_message(embed=embed, ephemeral=False)
         
@@ -201,6 +207,30 @@ class Trading(commands.Cog):
             )
             
         await interaction.response.send_message(embed=embed, ephemeral=False)
+        
+    
+    @app_commands.command(name = "delete_all_listings", description = "Delete all your trade listings")
+    async def delete_all_listings(self, interaction: discord.Interaction):
+        with open("data/listings.json", "r") as f:
+            listings = json.load(f)
+            
+        user_id_str = str(interaction.user.id)
+        
+        if user_id_str not in listings["listings"].keys() or not listings["listings"][user_id_str]["listings"]:
+            await interaction.response.send_message("You have no listings to delete.", ephemeral=True)
+            return
+        
+        for listing_id in list(listings["listing_ids"]):
+            if listing_id in listings["listings"][user_id_str]["listings"]:
+                listings["listing_ids"].remove(listing_id)
+        
+        listings["listings"][user_id_str]["listings"] = {}
+        
+        
+        with open("data/listings.json", "w") as f:
+            json.dump(listings, f, indent=4)
+            
+        await interaction.response.send_message("All your listings have been deleted.", ephemeral=True)
         
 
 async def setup(client):

@@ -18,6 +18,9 @@ async def on_ready():
 @client.command()
 async def sync(ctx):
     
+    print("Attempting to sync commands...")
+    await ctx.send("Attempting to sync commands...")
+
     try:
         synced = await client.tree.sync()
         await ctx.send(f"Synced {len(synced)} commands.")
@@ -25,7 +28,14 @@ async def sync(ctx):
     except Exception as e:
         await ctx.send(f"Failed to sync commands: {e}")
         print(f"Error syncing commands: {e}")
-        
+
+@client.command()
+async def get_server_icon(ctx):
+    if ctx.guild:
+        icon_url = ctx.guild.icon.url if ctx.guild.icon else "No icon"
+        await ctx.send(f"Server Icon URL: {icon_url}")
+    else:
+        await ctx.send("This command can only be used in a server.")
         
 
 

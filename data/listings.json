@@ -1,107 +1,7 @@
 {
     "listings": {
         "873789793295814687": {
-            "listings": {
-                "4455834": {
-                    "listing_id": "4455834",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "crossguard_emitter",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Crossguard Emitter"
-                },
-                "7906576": {
-                    "listing_id": "7906576",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "forge_schematic",
-                    "wanted_quantity": 2,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Forge Schematic"
-                },
-                "6897238": {
-                    "listing_id": "6897238",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "forge_schematic",
-                    "wanted_quantity": 2,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Forge Schematic"
-                },
-                "3520314": {
-                    "listing_id": "3520314",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "forge_schematic",
-                    "wanted_quantity": 2,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Forge Schematic"
-                },
-                "8846041": {
-                    "listing_id": "8846041",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "forge_schematic",
-                    "wanted_quantity": 2,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Forge Schematic"
-                },
-                "8246921": {
-                    "listing_id": "8246921",
-                    "item": "forge_schematic",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "crossguard_emitter",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Forge Schematic",
-                    "wanted_item_display_name": "Crossguard Emitter"
-                },
-                "9857372": {
-                    "listing_id": "9857372",
-                    "item": "forge_schematic",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "crossguard_emitter",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Forge Schematic",
-                    "wanted_item_display_name": "Crossguard Emitter"
-                },
-                "5212830": {
-                    "listing_id": "5212830",
-                    "item": "forge_schematic",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "crossguard_emitter",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Forge Schematic",
-                    "wanted_item_display_name": "Crossguard Emitter"
-                },
-                "2028726": {
-                    "listing_id": "2028726",
-                    "item": "beskar_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 1,
-                    "wanted_item": "crossguard_emitter",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Beskar Bar",
-                    "wanted_item_display_name": "Crossguard Emitter"
-                }
-            }
+            "listings": {}
         },
         "957076796891877436": {
             "listings": {
@@ -120,15 +20,6 @@
         }
     },
     "listing_ids": [
-        "7124202",
-        "4455834",
-        "7906576",
-        "6897238",
-        "3520314",
-        "8846041",
-        "8246921",
-        "9857372",
-        "5212830",
-        "2028726"
+        "7124202"
     ]
 }

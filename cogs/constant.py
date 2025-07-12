@@ -9,5 +9,13 @@ constants = {
             app_commands.Choice(name="Crossguard Emitter", value="crossguard_emitter"),
             app_commands.Choice(name="Kal Kestis Saber Set", value="kal_kestis_saber"),
             app_commands.Choice(name="Brylack Log", value="brylack_log"),
-        ]
+        ],
+    "item_choices_raw": [
+            "durasteel_bar",
+            "beskar_bar",
+            "forge_schematic",
+            "crossguard_emitter",
+            "kal_kestis_saber",
+            "brylack_log"
+        ],
 }

@@ -2,237 +2,133 @@
     "listings": {
         "873789793295814687": {
             "listings": {
-                "7876808": {
-                    "listing_id": "7876808",
+                "4455834": {
+                    "listing_id": "4455834",
                     "item": "durasteel_bar",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
+                    "wanted_item": "crossguard_emitter",
                     "wanted_quantity": 1,
                     "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "wanted_item_display_name": "Crossguard Emitter"
                 },
-                "3203930": {
-                    "listing_id": "3203930",
+                "7906576": {
+                    "listing_id": "7906576",
                     "item": "durasteel_bar",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
+                    "wanted_item": "forge_schematic",
+                    "wanted_quantity": 2,
                     "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "wanted_item_display_name": "Forge Schematic"
                 },
-                "6215276": {
-                    "listing_id": "6215276",
+                "6897238": {
+                    "listing_id": "6897238",
                     "item": "durasteel_bar",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
+                    "wanted_item": "forge_schematic",
+                    "wanted_quantity": 2,
                     "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "wanted_item_display_name": "Forge Schematic"
                 },
-                "8285645": {
-                    "listing_id": "8285645",
+                "3520314": {
+                    "listing_id": "3520314",
                     "item": "durasteel_bar",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
+                    "wanted_item": "forge_schematic",
+                    "wanted_quantity": 2,
                     "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "wanted_item_display_name": "Forge Schematic"
                 },
-                "3770829": {
-                    "listing_id": "3770829",
+                "8846041": {
+                    "listing_id": "8846041",
                     "item": "durasteel_bar",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
+                    "wanted_item": "forge_schematic",
+                    "wanted_quantity": 2,
                     "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "wanted_item_display_name": "Forge Schematic"
                 },
-                "8131426": {
-                    "listing_id": "8131426",
-                    "item": "durasteel_bar",
+                "8246921": {
+                    "listing_id": "8246921",
+                    "item": "forge_schematic",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
+                    "wanted_item": "crossguard_emitter",
                     "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "item_display_name": "Forge Schematic",
+                    "wanted_item_display_name": "Crossguard Emitter"
                 },
-                "3574712": {
-                    "listing_id": "3574712",
-                    "item": "durasteel_bar",
+                "9857372": {
+                    "listing_id": "9857372",
+                    "item": "forge_schematic",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
+                    "wanted_item": "crossguard_emitter",
                     "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "item_display_name": "Forge Schematic",
+                    "wanted_item_display_name": "Crossguard Emitter"
                 },
-                "3639610": {
-                    "listing_id": "3639610",
-                    "item": "durasteel_bar",
+                "5212830": {
+                    "listing_id": "5212830",
+                    "item": "forge_schematic",
                     "user_id": 873789793295814687,
                     "username": "static8596",
                     "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
+                    "wanted_item": "crossguard_emitter",
                     "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
+                    "item_display_name": "Forge Schematic",
+                    "wanted_item_display_name": "Crossguard Emitter"
                 },
-                "4805184": {
-                    "listing_id": "4805184",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "6569960": {
-                    "listing_id": "6569960",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "5543232": {
-                    "listing_id": "5543232",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "6050470": {
-                    "listing_id": "6050470",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "7253273": {
-                    "listing_id": "7253273",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "4320953": {
-                    "listing_id": "4320953",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "4844777": {
-                    "listing_id": "4844777",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "7972277": {
-                    "listing_id": "7972277",
-                    "item": "durasteel_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Durasteel Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "7794506": {
-                    "listing_id": "7794506",
+                "2028726": {
+                    "listing_id": "2028726",
                     "item": "beskar_bar",
                     "user_id": 873789793295814687,
                     "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
+                    "listing_quantity": 1,
+                    "wanted_item": "crossguard_emitter",
                     "wanted_quantity": 1,
                     "item_display_name": "Beskar Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "9792134": {
-                    "listing_id": "9792134",
-                    "item": "beskar_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
+                    "wanted_item_display_name": "Crossguard Emitter"
+                }
+            }
+        },
+        "957076796891877436": {
+            "listings": {
+                "7124202": {
+                    "listing_id": "7124202",
+                    "item": "forge_schematic",
+                    "user_id": 957076796891877436,
+                    "username": "onlyspaghettios",
+                    "listing_quantity": 11,
                     "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Beskar Bar",
-                    "wanted_item_display_name": "Durasteel Bar"
-                },
-                "8983360": {
-                    "listing_id": "8983360",
-                    "item": "beskar_bar",
-                    "user_id": 873789793295814687,
-                    "username": "static8596",
-                    "listing_quantity": 2,
-                    "wanted_item": "durasteel_bar",
-                    "wanted_quantity": 1,
-                    "item_display_name": "Beskar Bar",
+                    "wanted_quantity": 44,
+                    "item_display_name": "Forge Schematic",
                     "wanted_item_display_name": "Durasteel Bar"
                 }
             }
         }
     },
     "listing_ids": [
-        "7876808",
-        "3203930",
-        "6215276",
-        "8285645",
-        "3770829",
-        "8131426",
-        "3574712",
-        "3639610",
-        "4805184",
-        "6569960",
-        "5543232",
-        "6050470",
-        "7253273",
-        "4320953",
-        "4844777",
-        "7972277",
-        "7794506",
-        "9792134",
-        "8983360"
+        "7124202",
+        "4455834",
+        "7906576",
+        "6897238",
+        "3520314",
+        "8846041",
+        "8246921",
+        "9857372",
+        "5212830",
+        "2028726"
     ]
 }

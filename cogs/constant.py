@@ -104,7 +104,25 @@ constants = {
             app_commands.Choice(name="Knight Set", value="knight_set"),
             app_commands.Choice(name="Knight Pommel", value="knight_pommel"),
             app_commands.Choice(name="Knight Emitter", value="knight_emitter"),
-            app_commands.Choice(name="Knight Sleeve", value="knight_sleeve")
+            app_commands.Choice(name="Knight Sleeve", value="knight_sleeve"),
+            
+            #Overall "Stuff"
+            app_commands.Choice(name = "Knight Stuff", value = "knight_stuff"),
+            app_commands.Choice(name = "Fall Saber Stuff", value = "fallsaber_stuff"),
+            app_commands.Choice(name = "Crossguard Stuff", value = "crossguard_stuff"),
+            app_commands.Choice(name = "Kestis Stuff", value = "kestis_stuff"),
+            app_commands.Choice(name = "Zil Stuff", value = "zil_stuff"),
+            app_commands.Choice(name = "Inquisitor Stuff", value = "inquisitor_stuff"),
+            app_commands.Choice(name = "Malgus Stuff", value = "malgus_stuff"),
+            app_commands.Choice(name = "Peralun Stuff", value = "peralun_stuff"),
+            app_commands.Choice(name = "Beowulf Stuff", value = "beowulf_stuff"),
+            app_commands.Choice(name = "Synthetic Stuff", value = "synthetic_stuff"),
+            app_commands.Choice(name = "Revenge Stuff", value = "revenge_stuff"),
+            app_commands.Choice(name = "Rey Stuff", value = "rey_stuff"),
+            app_commands.Choice(name = "Krayt Stuff", value = "krayt_stuff"),
+            app_commands.Choice(name = "Vahlken Stuff", value = "vahlken_stuff"),
+            app_commands.Choice(name = "Ronin Stuff", value = "ronin_stuff"),
+            app_commands.Choice(name = "Obi-wan Stuff", value = "obi_wan_stuff")
 
     ],
     "item_choices_raw": [

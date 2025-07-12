@@ -241,6 +241,99 @@ class Trading(commands.Cog):
             
         await interaction.response.send_message("All your listings have been deleted.", ephemeral=True)
         
+        
+    @app_commands.command(name = "set_desired_items", description = "Add items you want to trade for")
+    async def set_wanted_items(self, interaction: discord.Interaction, items: str):
+        
+        with open("data/listings.json", "r") as f:
+            data = json.load(f)
+            
+        if not str(interaction.user.id) in data["listings"].keys():
+            data["listings"][str(interaction.user.id)] = {"listings": {}, "desired_items": "", "available_items": ""}
+
+        data["listings"][str(interaction.user.id)]["desired_items"] = items
+
+        with open("data/listings.json", "w") as f:
+            json.dump(data, f, indent=4)
+
+        await interaction.response.send_message("Your desired items have been updated.", ephemeral=True)
+        
+    @app_commands.command(name = "clear_desired_items", description = "Clear your desired items")
+    async def clear_desired_items(self, interaction: discord.Interaction):
+        with open("data/listings.json", "r") as f:
+            data = json.load(f)
+            
+        if str(interaction.user.id) in data["listings"]:
+            del data["listings"][str(interaction.user.id)]["desired_items"]
+            with open("data/listings.json", "w") as f:
+                json.dump(data, f, indent=4)
+                
+            await interaction.response.send_message("Your desired items have been cleared.", ephemeral=True)
+        else:
+            await interaction.response.send_message("You have no desired items to clear.", ephemeral=True)
+            
+    @app_commands.command(name = "set_available_items", description = "Add items you have available for trade")
+    async def set_available_items(self, interaction: discord.Interaction, items: str):
+        with open("data/listings.json", "r") as f:
+            data = json.load(f)
+            
+        if not str(interaction.user.id) in data["listings"].keys():
+            data["listings"][str(interaction.user.id)] = {"listings": {}, "available_items": "", "desired_items": ""}
+
+        data["listings"][str(interaction.user.id)]["available_items"] = items
+
+        with open("data/listings.json", "w") as f:
+            json.dump(data, f, indent=4)
+
+        await interaction.response.send_message("Your available items have been updated.", ephemeral=True)
+        
+    @app_commands.command(name = "clear_available_items", description = "Clear your available items")
+    async def clear_available_items(self, interaction: discord.Interaction):
+        with open("data/listings.json", "r") as f:
+            data = json.load(f)
+            
+        if str(interaction.user.id) in data["listings"].keys():
+            del data["listings"][str(interaction.user.id)]["available_items"]
+            with open("data/listings.json", "w") as f:
+                json.dump(data, f, indent=4)
+                
+            await interaction.response.send_message("Your available items have been cleared.", ephemeral=True)
+        else:
+            await interaction.response.send_message("You have no available items to clear.", ephemeral=True)
+            
+    @app_commands.command(name = "view_player", description = "View player's desired and wanted items")
+    async def view_player(self, interaction: discord.Interaction, user: discord.Member):
+        with open("data/listings.json", "r") as f:
+            data = json.load(f)
+            
+        user_id_str = str(user.id)
+
+        if user_id_str not in data["listings"]:
+            await interaction.response.send_message(f"{user.mention} does not have any desired or available items.", ephemeral=True)
+            return
+        
+        
+        if "desired_items" not in data["listings"][user_id_str].keys():
+            desired_items = "None"
+        
+        else:
+            desired_items = data["listings"][user_id_str]["desired_items"]
+            
+        if "available_items" not in data["listings"][user_id_str].keys():
+            available_items = "None"
+        
+        else:
+            available_items = data["listings"][user_id_str]["available_items"]
+            
+        embed_text = "```ansi\n"
+
+        embed_text += f"\u001b[2;34mDesired items: \u001b[37m{desired_items}\n"
+        embed_text += f"\u001b[2;34mAvailable items: \u001b[37m{available_items}\n"
+        embed_text += "```"
+
+        embed = discord.Embed(title=f"{user.name}'s Trade Preferences", description=embed_text, color=discord.Color.blue())
+
+        await interaction.response.send_message(embed=embed, ephemeral=False)
 
 async def setup(client):
     await client.add_cog(Trading(client))

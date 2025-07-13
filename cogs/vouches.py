@@ -4,6 +4,8 @@ from discord.ext import commands
 import json
 import random
 from typing import List
+from datetime import datetime
+import pytz
 
 
 
@@ -25,7 +27,8 @@ class Vouch(commands.Cog):
             "comment": comment,
             "vouch_id": vouch_id,
             "vouched_by": str(interaction.user.id),
-            "vouched_by_name": interaction.user.name
+            "vouched_by_name": interaction.user.name,
+            "timestamp": int(datetime.now(pytz.utc).timestamp())
         }
 
         with open("data/vouches.json", "r") as f:

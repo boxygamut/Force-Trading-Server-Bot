@@ -5,7 +5,7 @@ import os
 
 client = commands.Bot(command_prefix = "!", intents = discord.Intents.all())
 
-cogs = ["cogs.trading"]
+cogs = ["cogs.trading", "cogs.vouches"]
 
 @client.event
 async def on_ready():
